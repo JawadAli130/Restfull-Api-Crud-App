@@ -5,8 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Crud App</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script src="./popper.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script src="./jqcrud.js"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./jqstyle.css">
 </head>
 <body>
-    <h1>THIS IS MY APP</h1>
+    <div class="container">
+        <h1>Recipes API Client</h1>
+
+        <form>
+            <div class="form-group">
+              <label for="title">Title of Recipe</label>
+              <input type="text" class="form-control" id="title" placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="body">Body of Recipe</label>
+              <input type="text" class="form-control" id="body" placeholder="Enter Recipe Detail Here">
+            </div>
+        </form>
+
+        <button id="addRecipe" type="button" class="btn btn-info">Add Recipe</button>
+        <div id="recipes">
+            loading...
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateModalLabel">Update Your Recipe</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden"id="updateId">
+                        <div class="form-group">
+                            <label for="titleInUpdate">Title of Recipe</label>
+                            <input type="text" class="form-control" id="updateTitle">
+                        </div>
+                        <div class="form-group">
+                            <label for="bodyInUpdate">Body of Recipe</label>
+                            <input type="text" class="form-control" id="updateBody">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="closeBtnUpdate" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="updateBtnUpdate" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
